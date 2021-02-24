@@ -40,6 +40,15 @@ setInterval(check3, 500);
 //(using Pipepart if you've made that, if not, then just a {} object) that is a topper for the pipe. It should be 20 wider than the pipe (so 10 on each side)
 //and 10 tall, and positioned on top of the pipe. You need not draw just, just get the numbers
 //done for problem 34
-function maketop(obj) {
-  
+function check4(obj) {
+
+}
+
+//Make a function that will alert to the screen what the date and time is.
+//done for problem 11
+function check5() {
+  var d = new Date();
+  var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  alert( monthNames[d.getMonth()] + " " + d.getDate() + " " + d.getFullYear());
+  //month + " " + day + " " + year
 }
