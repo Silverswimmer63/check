@@ -41,7 +41,9 @@ setInterval(check3, 500);
 //and 10 tall, and positioned on top of the pipe. You need not draw just, just get the numbers
 //done for problem 34
 function check4(obj) {
-
+  var retObj = {};
+  retObj = {x: obj.x - 10, y: obj.y + 10, width: obj.width + 10, height: obj.height, color: obj.color};
+  return retObj;
 }
 
 //Make a function that will alert to the screen what the date and time is.
