@@ -54,3 +54,16 @@ function check5() {
   alert( monthNames[d.getMonth()] + " " + d.getDate() + " " + d.getFullYear());
   //month + " " + day + " " + year
 }
+
+//Make a function that searches a string for numbers from 0 to 9 and replaces them in the string with the words.
+//Assume that you aren't given strings that have numbers greater than 9
+//done for problem 44
+function check6(str) {
+  var retStr = "";
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] == "1") {
+      
+    }
+    return str;
+  }
+}
