@@ -59,11 +59,19 @@ function check5() {
 //Assume that you aren't given strings that have numbers greater than 9
 //done for problem 44
 function check6(str) {
-  var retStr = "";
+  var retStr = [];
   for (var i = 0; i < str.length; i++) {
-    if (str[i] == "1") {
-      
-    }
-    return str;
+    if (str[i] == "0") { retStr.push("zero"); }
+    if (str[i] == "1") { retStr.push("one"); }
+    if (str[i] == "2") { retStr.push("two"); }
+    if (str[i] == "3") { retStr.push("three"); }
+    if (str[i] == "4") { retStr.push("four"); }
+    if (str[i] == "5") { retStr.push("five"); }
+    if (str[i] == "6") { retStr.push("six"); }
+    if (str[i] == "7") { retStr.push("seven"); }
+    if (str[i] == "8") { retStr.push("eight"); }
+    if (str[i] == "9") { retStr.push("nine"); }
+    else { retStr.push(str[i]); }
   }
+  return retStr;
 }
