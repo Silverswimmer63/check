@@ -59,20 +59,19 @@ function check5() {
 //Assume that you aren't given strings that have numbers greater than 9
 //done for problem 44
 function check6(str) {
-  var arr = [];
   var retStr = "";
   for (var i = 0; i < str.length; i++) {
-    if (str[i] == "0") { arr.push("zero"); }
-    if (str[i] == "1") { arr.push("one"); }
-    if (str[i] == "2") { arr.push("two"); }
-    if (str[i] == "3") { arr.push("three"); }
-    if (str[i] == "4") { arr.push("four"); }
-    if (str[i] == "5") { arr.push("five"); }
-    if (str[i] == "6") { arr.push("six"); }
-    if (str[i] == "7") { arr.push("seven"); }
-    if (str[i] == "8") { arr.push("eight"); }
-    if (str[i] == "9") { arr.push("nine"); }
-    else { arr.push(str[i]); }
+    if (str[i] == "0") { retStr += "zero "; }
+    else if (str[i] == "1") { retStr += "one "; }
+    else if (str[i] == "2") { retStr += "two "; }
+    else if (str[i] == "3") { retStr += "three "; }
+    else if (str[i] == "4") { retStr += "four "; }
+    else if (str[i] == "5") { retStr += "five "; }
+    else if (str[i] == "6") { retStr += "six "; }
+    else if (str[i] == "7") { retStr += "seven "; }
+    else if (str[i] == "8") { retStr += "eight "; }
+    else if (str[i] == "9") { retStr += "nine "; }
+    else { retStr += str[i]; }
   }
-  return arr;
+  return retStr;
 }
