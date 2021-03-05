@@ -50,7 +50,7 @@ function draw() {
   ctx.clearRect(0, 0, myCanvas.width, myCanvas.height); //Clears the canvas every frame, so a new circle can be drawn.
   drawCircle();//draws the ball
   if (rect.x + rect.dx > c.width - rect.width || rect.x + rect.dx < rect.width) { //If the circle's x position exceeds the width of the canvas...
-    rect.dx = -rect.dx; //The ball's x direction will be flipped, and it will bounce a specific distance (damping).
+    rect.dx = 0; //The ball's x direction will be flipped, and it will bounce a specific distance (damping).
   }
   if(rect.y + rect.dy > c.height - rect.width || rect.y + rect.dy < rect.width) { //If the circle's y position exceeds the height of the canvas...
     rect.dy = 0; //Its y direction will be flipped, and it's speed will decrease.
