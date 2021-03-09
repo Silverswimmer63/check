@@ -27,14 +27,12 @@ function check3() {
   var rad = Math.floor(Math.random() * 50) + 1;
   var xPos = Math.floor(Math.random() * (c.width - (rad * 2))) + rad;
   var yPos = Math.floor(Math.random() * (c.height - (rad * 2))) + rad;
-  //var xPos = (Math.floor(Math.random() * 400 - (rad * 2))) + rad;
-  //var yPos = (Math.floor(Math.random() * 400 - (rad * 2))) + rad;
   ctx.beginPath();
   ctx.arc(xPos, yPos, rad , 0, 2 * Math.PI);
   ctx.stroke();
 }
 
-setInterval(check3, 500);
+setInterval(check3, 1000);
 
 //Make a function called maketop that take for input an object in the form of {x: number, y:number, width:number, height:number, color: string} and returns an object
 //(using Pipepart if you've made that, if not, then just a {} object) that is a topper for the pipe. It should be 20 wider than the pipe (so 10 on each side)
@@ -75,3 +73,17 @@ function check6(str) {
   }
   return retStr;
 }
+
+//Make a function that draws a rectangle in an random location on a 400x 400 canvas
+//done on problem 23
+function check7() {
+  var width = Math.floor(Math.random() * c.width);
+  var height = Math.floor(Math.random() * c.height);
+  var x = Math.floor(Math.random() * (c.width - width));
+  var y = Math.floor(Math.random() * (c.height - height));
+  ctx.beginPath();
+  ctx.strokeRect(x, y, width, height);
+  ctx.stroke();
+}
+
+setInterval(check7, 1000);
