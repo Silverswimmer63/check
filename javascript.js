@@ -1,7 +1,7 @@
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 
-var rect = {x: c.width/2, y: c.width/2, width: 30, height: 60, dx: 0, dy: 10};
+var rect = {x: 10, y: 10, width: 30, height: 60, dx: 0, dy: 10};
 var rightPressed = false;
 var leftPressed = false;
 var gravity = .07;
@@ -25,7 +25,7 @@ function draw() {
   }
   rect.dy += gravity;
   rect.x += rect.dx
-  if (((rect.y + rect.dy) + rect.width) <= c.height) {
+  if (((rect.y + rect.dy) + rect.height) <= c.height) {
     rect.y += rect.dy;
   }
   if(rightPressed) {
