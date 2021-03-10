@@ -10,6 +10,8 @@ var downPressed = false;
 function drawRect() {
   ctx.beginPath();
   ctx.rect(rect.x, rect.y, rect.width, rect.height);
+  ctx.fillStyle = "magenta";
+  ctx.fill();
   ctx.stroke();
 }
 
@@ -26,28 +28,28 @@ function draw() {
   if (((rect.y + rect.dy) + rect.height) <= c.height) {
     rect.y +- rect.dy;
   }
-  if(rightPressed == true) {
+  if(rightPressed) {
     rect.dx = 3;
     if (rect.dx + rect.width > c.width){
       rect.dx = c.width - ball.width;
     }
     console.log("right");
   }
-  else if(leftPressed == true) {
+  else if(leftPressed) {
     rect.dx = -3;
     if (rect.dx < 0){
       rect.dx = -3;
     }
     console.log("left");
   }
-  else if(upPressed == true) {
+  else if(upPressed) {
     rect.dy = 3;
     if (rect.dy < 0){
       rect.dy = 3;
     }
     console.log("up");
   }
-  else if(downPressed == true) {
+  else if(downPressed) {
     rect.dy = -3;
     if (rect.dy < 0){
       rect.dy = -3;
@@ -58,7 +60,6 @@ function draw() {
     rect.dx = 0;
   }
   console.log("false");
-
 }
 
 setInterval(draw, 10);
