@@ -28,25 +28,25 @@ function draw() {
   if (((rect.y + rect.dy) + rect.height) <= c.height) {
     rect.y += rect.dy;
   }
-  if(rightPressed) {
+  if(rightPressed == true) {
     rect.dx = 3;
     if (rect.dx + rect.width > c.width){
       rect.dx = c.width - ball.width;
     }
   }
-  else if(leftPressed) {
+  else if(leftPressed == true) {
     rect.dx = -3;
     if (rect.dx < 0){
       rect.dx = -3;
     }
   }
-  else if(upPressed) {
+  else if(upPressed == true) {
     rect.dy = 3;
     if (rect.dy < 0){
       rect.dy = 3;
     }
   }
-  else if(downPressed) {
+  else if(downPressed == true) {
     rect.dy = -3;
     if (rect.dy < 0){
       rect.dy = -3;

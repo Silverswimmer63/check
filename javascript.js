@@ -26,6 +26,39 @@ function draw() {
   if (((rect.y + rect.dy) + rect.height) <= c.height) {
     rect.y +- rect.dy;
   }
+  if(rightPressed == true) {
+    rect.dx = 3;
+    if (rect.dx + rect.width > c.width){
+      rect.dx = c.width - ball.width;
+    }
+    console.log("right");
+  }
+  else if(leftPressed == true) {
+    rect.dx = -3;
+    if (rect.dx < 0){
+      rect.dx = -3;
+    }
+    console.log("left");
+  }
+  else if(upPressed == true) {
+    rect.dy = 3;
+    if (rect.dy < 0){
+      rect.dy = 3;
+    }
+    console.log("up");
+  }
+  else if(downPressed == true) {
+    rect.dy = -3;
+    if (rect.dy < 0){
+      rect.dy = -3;
+    }
+    console.log("down");
+  }
+  else if (rightPressed == false || leftPressed == false || upPressed == false || downPressed == false) {
+    rect.dx = 0;
+  }
+  console.log("false");
+
 }
 
 setInterval(draw, 10);
@@ -34,7 +67,31 @@ document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keydown", keyUpHandler, false);
 
 function keyDownHandler(e) {
-  if (e.key) {
+  if (e.key == "d") {
+    rightPressed = true;
+  }
+  else if (e.key == "a") {
+    leftPressed = true;
+  }
+  else if (e.key == "w") {
+    upPressed = true;
+  }
+  else if (e.key == "s") {
+    downPressed = true;
+  }
+}
 
+function keyUpHandler(e) {
+  if (e.key == "d") {
+    rightPressed = false;
+  }
+  else if (e.key == "a") {
+    leftPressed = false;
+  }
+  else if (e.key == "w") {
+    upPressed = false;
+  }
+  else if (e.key == "s") {
+    downPressed = false;
   }
 }
