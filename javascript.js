@@ -4,7 +4,8 @@ var ctx = c.getContext("2d");
 var rect = {x: 10, y: 10, width: 30, height: 60, dx: 0, dy: 10};
 var rightPressed = false;
 var leftPressed = false;
-var gravity = .07;
+var upPressed = false;
+var downPressed = false;
 
 //this function draws the character (currently only drawing a rectangle)
 function drawRect() {
@@ -23,7 +24,6 @@ function draw() {
   if (rect.y + rect.dy > c.height || rect.y + rect.dy < rect.width) {
     rect.dx = 0;
   }
-  rect.dy += gravity;
   rect.x += rect.dx
   if (((rect.y + rect.dy) + rect.height) <= c.height) {
     rect.y += rect.dy;
@@ -40,7 +40,19 @@ function draw() {
       rect.dx = -3;
     }
   }
-  else if (rightPressed == false || leftPressed == false) {
+  else if(upPressed) {
+    rect.dy = 3;
+    if (rect.dy < 0){
+      rect.dy = 3;
+    }
+  }
+  else if(downPressed) {
+    rect.dy = -3;
+    if (rect.dy < 0){
+      rect.dy = -3;
+    }
+  }
+  else if (rightPressed == false || leftPressed == false || upPressed == false || downPressed == false) {
     rect.dx = 0;
   }
 }
@@ -52,9 +64,6 @@ document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
 function makeBounce(e) {
- if (e.key == " ") {//if the spacebar is pressed the rect gains y velcity
-   rect.dy -= 8;
- }
  if (e.key == "x") {//if thr "r" key is pressed the x direction is flipped
    window.location.reload();
  }
@@ -67,6 +76,12 @@ function keyDownHandler(e) {
   else if(e.key == "a") {
     leftPressed = true;
   }
+  else if(e.key == "w") {
+    upPressed = true;
+  }
+  else if(e.key == "s") {
+    downPressed = true;
+  }
 }
 
 function keyUpHandler(e) {
@@ -75,5 +90,11 @@ function keyUpHandler(e) {
   }
   else if(e.key == "a") {
     leftPressed = false;
+  }
+  else if(e.key == "w") {
+    upPressed = false;
+  }
+  else if(e.key == "s") {
+    downPressed = false;
   }
 }
