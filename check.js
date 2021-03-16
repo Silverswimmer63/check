@@ -87,3 +87,39 @@ function check7() {
 }
 
 setInterval(check7, 1000);
+
+//Make a function that draws a rectangle in an random location on a 400x 400 canvas
+//done on problem 23
+function check8() {
+  var width = Math.floor(Math.random() * c.width);
+  var height = Math.floor(Math.random() * c.height);
+  var x = Math.floor(Math.random() * (c.width - width));
+  var y = Math.floor(Math.random() * (c.height - height));
+  ctx.beginPath();
+  ctx.strokeRect(x, y, width, height);
+  ctx.stroke();
+}
+
+setInterval(check8, 1000);
+//
+
+//Make a function that searches a string for numbers from 0 to 9 and replaces them in the string with the words.
+//Assume that you aren't given strings that have numbers greater than 9
+//done for problem 44
+function check9(str) {
+  var retStr = "";
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] == "0") { retStr += "zero "; }
+    else if (str[i] == "1") { retStr += "one "; }
+    else if (str[i] == "2") { retStr += "two "; }
+    else if (str[i] == "3") { retStr += "three "; }
+    else if (str[i] == "4") { retStr += "four "; }
+    else if (str[i] == "5") { retStr += "five "; }
+    else if (str[i] == "6") { retStr += "six "; }
+    else if (str[i] == "7") { retStr += "seven "; }
+    else if (str[i] == "8") { retStr += "eight "; }
+    else if (str[i] == "9") { retStr += "nine "; }
+    else { retStr += str[i]; }
+  }
+  return retStr;
+}
